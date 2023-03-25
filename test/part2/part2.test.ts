@@ -64,6 +64,32 @@ describe("Assignment 1 Part 2", () => {
             const t5: WordTree = {root:"", children:[]}
             expect(treeToSentence(t5)).toBe("");
         });
+
+        it('Represents a tree as a sentence', () => {
+          var t1 = {
+            root: 'Hello',
+            children: [
+              {
+                root: 'students',
+                children: [
+                  {
+                    root: 'how',
+                    children: [],
+                  },
+                ],
+              },
+              {
+                root: 'are',
+                children: [],
+              },
+              {
+                root: 'you?',
+                children: [],
+              },
+            ],
+          };
+          expect(treeToSentence(t1)).toBe('Hello students how are you?');
+        });
     });
 });
 

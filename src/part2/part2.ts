@@ -38,14 +38,16 @@ const isPairMatch: (openBracket: string, closedBracket: string) => boolean = (op
 
 
 
-
-
-
 /* Question 3 */
 export type WordTree = {
     root: string;
     children: WordTree[];
 }
 
-export const treeToSentence : undefined = undefined
+export const treeToSentence: (tree: WordTree) => string = (tree: WordTree): string => {
+  return tree.children.reduce((currentString: string, child: WordTree) => currentString + ' ' + treeToSentence(child), tree.root);
+};
+
+
+
 
